@@ -52,7 +52,21 @@
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     },
+    "e2e": {
+      "inputs": [
+        "default",
+        "^production",
+        { "externalDependencies": ["@playwright/test"] },
+        { "env": "CUSTOM_MODE" }
+      ]
+    },
     "e2e-ci--**/*": {
+      "inputs": [
+        "default",
+        "^production",
+        { "externalDependencies": ["@playwright/test"] },
+        { "env": "CUSTOM_MODE" }
+      ],
       "dependsOn": ["^build"]
     }
   }
